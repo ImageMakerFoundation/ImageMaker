@@ -4,7 +4,7 @@ ImageMaker NFT Platform
 
    Note: You can use the seed phrase instead of directly passing the private key.
 
-1. Use ImageMaker Paint (IMPaint) to draw an image or skip this step if you have got one.
+1. Use ImageMaker Paint (imNFTPaint) to draw an image or skip this step if you have got one.
    To clear pixel, right click on it.
 
    Note: ImageMaker uses a custom 16-color palette.
@@ -22,7 +22,7 @@ ImageMaker NFT Platform
 
              8: #454545,
              9: #b9b9b9,
-             a: 976536,
+             a: #976536,
              b: #00a800,
              c: #0097ff,
              d: #ff0097,
@@ -30,7 +30,7 @@ ImageMaker NFT Platform
              f: #ffffff
            }
 
-2. Use ImageMaker Miner (IMMiner) to open the image and hit 'Mine'.
+2. Use ImageMaker Miner (imNFTMiner) to open the image and hit 'Mine'.
    The bar on the bottom shows you the mining progress.
    You will get .imnft token file in the end.
    It should be in the same directory as IMMiner.
@@ -38,7 +38,7 @@ ImageMaker NFT Platform
    Remember: The more non-black pixels your image has,
                the more difficult it is to mine your NFT.
 
-3. You can then set NFT info by using ImageMaker Manager (IMManager).
+3. You can then set NFT info by using ImageMaker Control (imNFTControl).
    Use this program to register your NFT on blockchain,
      set owner info, manage NFT price, start/cancel auctions etc.
 
@@ -47,7 +47,20 @@ ImageMaker NFT Platform
          More info here:
            https://docs.opensea.io/docs/metadata-standards
 
-4. You can buy other people's NFTs and participate in auctions using ImageMaker Viewer (IMViewer).
+   Note: If you want your NFT to be reproducible locally,
+           you need to add this to your metadata JSON:
+         "attributes": [
+           {
+             "trait_type": "Name",
+             "value": "<NFT filename without .imnft extension>"
+           },
+           {
+             "trait_type": "Data",
+             "value": "<Your .imnft file contents>"
+           }
+         ]
+
+4. You can buy other people's NFTs and participate in auctions using ImageMaker Client (imNFTClient).
 
 5. 'ElProfesor.png' and 'ElProfesor.imnft' are given as examples,
      so that you can better understand the process.
@@ -58,6 +71,6 @@ ImageMaker NFT Platform
 
 6. In order to give away or sell your NFT directly use your crypto wallet.
 
-Have fun!
+Have fun mining unique NFTs!
 
 Copyright (c) ImageMaker Foundation
