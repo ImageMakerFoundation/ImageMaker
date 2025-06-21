@@ -60,6 +60,11 @@ ImageMaker NFT Platform
            }
          ]
 
+   Note: Check out NFTMetadataTemplate.json, you can paste into it your actual NFT metadata instead of *** example metadata ***,
+           then upload this file to IPFS (e.g. through Pinata) and click 'Set NFT URL' in imNFTControl. After that, paste into the prompt:
+         https://ipfs.io/ipfs/<Your .json file IPFS identifier>
+         Done! Now you can see your token on OpenSea/Rarible etc.
+
 4. You can buy other people's NFTs and participate in auctions using ImageMaker Client (imNFTClient).
 
 5. 'ElProfesor.png' and 'ElProfesor.imnft' are given as examples,
