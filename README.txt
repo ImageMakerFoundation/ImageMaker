@@ -1,5 +1,7 @@
 ImageMaker NFT Platform
 
+!!! BEFORE READING THIS DOCUMENT MAKE SURE YOU READ 'NFT_NAMING_CONVENTIONS.txt' !!!
+
 0. Set up your Arbitrum One node provider (if having connection issues) and wallet info in the configuration file 'config.ini'.
 
    Note: You can use the seed phrase instead of directly passing the private key.
@@ -34,6 +36,10 @@ ImageMaker NFT Platform
    The bar on the bottom shows you the mining progress.
    You will get .imnft token file in the end.
    It should be in the same directory as IMMiner.
+   You can pause mining by copying already found proofs in the text area, then click 'Show Counter',
+     save row iteration counter value along with the proofs somewhere.
+   Then, when you want to continue mining from the previous point, load the image, paste the saved proofs,
+     click 'Mine' and paste saved iteration counter, and the mining process will continue from the previous point.
 
    Remember: The more non-black pixels your image has,
                the more difficult it is to mine your NFT.
@@ -48,17 +54,8 @@ ImageMaker NFT Platform
            https://docs.opensea.io/docs/metadata-standards
 
    Note: If you want your NFT to be reproducible locally,
-           you need to add this to your metadata JSON:
-         "attributes": [
-           {
-             "trait_type": "Name",
-             "value": "<NFT filename without .imnft extension>"
-           },
-           {
-             "trait_type": "Data",
-             "value": "<Your .imnft file contents>"
-           }
-         ]
+           you need to add this after your description in metadata JSON ('\n' stands for newline):
+         "description": "(YourTokenName optional NFT description...\n\n)YourTokenName.imnft\n<YourTokenName.imnft File Contents>"
 
    Note: Check out NFTMetadataTemplate.json, you can paste into it your actual NFT metadata instead of *** example metadata ***,
            then upload this file to IPFS (e.g. through Pinata) and click 'Set NFT URL' in imNFTControl. After that, paste into the prompt:
