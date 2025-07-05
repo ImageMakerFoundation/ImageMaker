@@ -55,7 +55,7 @@ ImageMaker NFT Platform
 
    Note: If you want your NFT to be reproducible locally,
            you need to add this after your description in metadata JSON ('\n' stands for newline):
-         "description": "(YourTokenName optional NFT description...\n\n)YourTokenName.imnft\n<YourTokenName.imnft File Contents>"
+         "description": "(YourTokenName optional NFT description...\n\n)YourTokenName.imnft\n<YourTokenName.imnft file contents>"
 
    Note: Check out NFTMetadataTemplate.json, you can paste into it your actual NFT metadata instead of *** example metadata ***,
            then upload this file to IPFS (e.g. through Pinata) and click 'Set NFT URL' in imNFTControl. After that, paste into the prompt:
