@@ -36,7 +36,7 @@ PALETTE = (
 PIXEL_SIZE = 20
 PALETTE_RECT_SIZE = 30
 
-CBASE_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CBASE_CHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 UINT40_MAX = (1 << 40) - 1
 UINT96_MAX = (1 << 96) - 1
@@ -196,7 +196,7 @@ def apply_theme(root):
                     padding=6)
     style.map('TEntry',
               foreground=[('focus', UI_TEXTCOLOR)],
-              fieldbackground=[('focus', '#111')])
+              fieldbackground=[('focus', UI_HEADER_BG)])
 
     style.configure('TCombobox',
                     fieldbackground=UI_BGCOLOR,
@@ -251,30 +251,30 @@ class ThemedDialogBase:
 
         self.window = tk.Toplevel(parent)
         self.window.title(title)
-        self.window.configure(bg="#0b0b0b")
+        self.window.configure(bg=UI_BGCOLOR)
         self.window.grab_set()
         self.window.resizable(False, False)
 
         self.create_widgets(prompt)
-        self.window.protocol("WM_DELETE_WINDOW", self.cancel)
+        self.window.protocol('WM_DELETE_WINDOW', self.cancel)
         self.entry.focus()
         self.window.wait_window()
 
     def create_widgets(self, prompt):
         label = ttk.Label(self.window, text=prompt)
-        label.pack(padx=16, pady=(16, 4), anchor="w")
+        label.pack(padx=16, pady=(16, 4), anchor='w')
 
         self.entry = ttk.Entry(self.window)
-        self.entry.pack(padx=16, pady=(0, 16), fill="x")
+        self.entry.pack(padx=16, pady=(0, 16), fill='x')
 
         btn_frame = ttk.Frame(self.window)
-        btn_frame.pack(padx=16, pady=(0, 16), fill="x")
+        btn_frame.pack(padx=16, pady=(0, 16), fill='x')
 
-        ok_btn = ttk.Button(btn_frame, text="OK", command=self.ok)
-        ok_btn.pack(side="left", expand=True, fill="x", padx=(0, 8))
+        ok_btn = ttk.Button(btn_frame, text='OK', command=self.ok)
+        ok_btn.pack(side='left', expand=True, fill='x', padx=(0, 8))
 
-        cancel_btn = ttk.Button(btn_frame, text="Cancel", command=self.cancel)
-        cancel_btn.pack(side="left", expand=True, fill="x")
+        cancel_btn = ttk.Button(btn_frame, text='Cancel', command=self.cancel)
+        cancel_btn.pack(side='left', expand=True, fill='x')
 
     def ok(self):
         value = self.entry.get()
