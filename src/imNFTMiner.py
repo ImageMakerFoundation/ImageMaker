@@ -42,8 +42,6 @@ class imNFTMiner:
         print(f'{y}:')
         print(''.join((hex(r)[2:] for r in row)).replace('0', '_'))
 
-        self.secret_len = 1
-
         while True:
             for c in itertools.islice(
                 itertools.product(
@@ -57,7 +55,7 @@ class imNFTMiner:
 
                 hash = hashlib.sha3_512(
                     bytes(''.join((
-                        f"{img_name} {'_'.join(secrets) if secrets else ''}",
+                        f'{img_name} {'_'.join(secrets) if secrets else ''}',
                         hex(y)[2:],
                         secret,
                     )), 'ascii')
@@ -80,6 +78,8 @@ class imNFTMiner:
                     print(f'{round((y+1)*100/16)}%\n')
 
                     secrets.append(secret)
+
+                    self.secret_len = 1
                     self.iter_count = 0
 
                     return
