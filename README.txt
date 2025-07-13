@@ -48,19 +48,12 @@ ImageMaker NFT Platform
    Use this program to register your NFT on blockchain,
      set owner info, manage NFT price, start/cancel auctions etc.
 
-   Note: You can optionally set the metadata URL for your NFT
-           if you want it to be readable by marketplaces like OpenSea, Rarible etc.
-         More info here:
-           https://docs.opensea.io/docs/metadata-standards
-
-   Note: If you want your NFT to be reproducible locally,
-           you need to add this after your description in metadata JSON ('\n' stands for newline):
-         "description": "(YourTokenName optional NFT description...\n\n)YourTokenName.imnft\n<YourTokenName.imnft file contents>"
-
-   Note: Check out NFTMetadataTemplate.json, you can paste into it your actual NFT metadata instead of *** example metadata ***,
-           then upload this file to IPFS (e.g. through Pinata) and click 'Set NFT URL' in imNFTControl. After that, paste into the prompt:
-         https://ipfs.io/ipfs/<Your .json file IPFS identifier>
-         Done! Now you can see your token on OpenSea/Rarible etc.
+   Note: Check out imNFTMeta! You can upload your 320x320 image to IPFS (e.g. through Pinata),
+           then edit NFT metadata using imNFTMeta and save it as .json file,
+           and after that upload this file to IPFS again and click 'Set NFT URL' in imNFTControl.
+         After all has been done, paste into the prompt:
+           https://ipfs.io/ipfs/<Your .json file IPFS identifier>
+         Done! Now you can see your token on Rarible/OpenSea etc.
 
 4. You can buy other people's NFTs and participate in auctions using ImageMaker Client (imNFTClient).
 
