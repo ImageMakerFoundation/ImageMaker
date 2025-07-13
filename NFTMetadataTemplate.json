@@ -1,6 +1,0 @@
-{
-  "name": "*** NFT name ***",
-  "description": "*** NFT About section ***",
-  "background_color": "*** Background color in rrggbb format (e.g. 000000) ***",
-  "image": "https://ipfs.io/ipfs/*** 320x320 .png preview image IPFS identifier ***"
-}
