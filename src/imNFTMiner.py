@@ -121,8 +121,15 @@ class imNFTMiner:
             return
         
         with Image.open(img_path) as img:
-            if img.width != 16 or img.height != 16:
-                self.root.after(0, lambda: messagebox.showerror('Error', 'Image must be 16x16.'))
+            if img.width != 16*imutils.PIXEL_SIZE or img.height != 16*imutils.PIXEL_SIZE:
+                self.root.after(
+                    0,
+                    lambda: messagebox.showerror(
+                        'Error',
+                        f'Image must be {16*imutils.PIXEL_SIZE}x{16*imutils.PIXEL_SIZE}.',
+                    )
+                )
+
                 self.mining = False
                 return
             
@@ -170,7 +177,14 @@ class imNFTMiner:
 
             for y in range(start_row):
                 row = []
-                img_row = img_data[y * 16:(y + 1) * 16]
+
+                img_row = img_data[
+                    (y*imutils.PIXEL_SIZE)
+                    * (16*imutils.PIXEL_SIZE)
+                    :((y + 1)*imutils.PIXEL_SIZE)
+                    * (16*imutils.PIXEL_SIZE)
+                ][:16*imutils.PIXEL_SIZE][::imutils.PIXEL_SIZE]
+
                 for px in img_row:
                     row.append(
                         next((i for i, v in enumerate(imutils.PALETTE) if v == px[:3]), 0)
@@ -180,7 +194,7 @@ class imNFTMiner:
             if start_row > 0:
                 self.root.after(
                     0,
-                    lambda v=round(start_row * 100 / img.height): self.progress_bar.config(value=v)
+                    lambda v=round(start_row * 100 / 16): self.progress_bar.config(value=v)
                 )
 
             for y in range(start_row, 16):
@@ -189,7 +203,14 @@ class imNFTMiner:
                     return
 
                 row = []
-                img_row = img_data[y * 16:(y + 1) * 16]
+
+                img_row = img_data[
+                    (y*imutils.PIXEL_SIZE)
+                    * (16*imutils.PIXEL_SIZE)
+                    :((y + 1)*imutils.PIXEL_SIZE)
+                    * (16*imutils.PIXEL_SIZE)
+                ][:16*imutils.PIXEL_SIZE][::imutils.PIXEL_SIZE]
+
                 for px in img_row:
                     row.append(
                         next((i for i, v in enumerate(imutils.PALETTE) if v == px[:3]), 0)
@@ -206,7 +227,7 @@ class imNFTMiner:
 
                 self.root.after(
                     0,
-                    lambda v=round((y + 1) * 100 / img.height): self.progress_bar.config(value=v)
+                    lambda v=round((y + 1) * 100 / 16): self.progress_bar.config(value=v)
                 )
                 self.root.after(0, lambda: self.proof_text.delete('1.0', 'end'))
                 self.root.after(0, lambda: self.proof_text.insert('1.0', '_'.join(secrets)))
