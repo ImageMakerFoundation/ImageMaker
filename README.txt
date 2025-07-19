@@ -9,9 +9,9 @@ ImageMaker NFT Platform
 1. Use ImageMaker Paint (imNFTPaint) to draw an image or skip this step if you have got one.
    To clear pixel, right click on it.
 
-   Note: ImageMaker uses a custom 16-color palette.
-         If you have your own image drawn in an editor other than IMPaint,
-           make sure that it is 16x16 px and uses the ImageMaker palette:
+   Note: ImageMaker uses a custom 16-color palette and uses 320x320 images as its tokens.
+         If you have your own image drawn in an editor other than imNFTPaint,
+           make sure that it is 16x16 pixel blocks in size (1 pixel block = 20x20 px square) and uses the ImageMaker palette:
            {
              0: #000000,
              1: #868686,
@@ -35,7 +35,7 @@ ImageMaker NFT Platform
 2. Use ImageMaker Miner (imNFTMiner) to open the image and hit 'Mine'.
    The bar on the bottom shows you the mining progress.
    You will get .imnft token file in the end.
-   It should be in the same directory as IMMiner.
+   It should be in the same directory as imNFTMiner.
    You can pause mining by copying already found proofs in the text area, then click 'Show Counter',
      save row iteration counter value along with the proofs somewhere.
    Then, when you want to continue mining from the previous point, load the image, paste the saved proofs,
@@ -48,12 +48,12 @@ ImageMaker NFT Platform
    Use this program to register your NFT on blockchain,
      set owner info, manage NFT price, start/cancel auctions etc.
 
-   Note: Check out imNFTMeta! You can upload your 320x320 image to IPFS (e.g. through Pinata),
-           then edit NFT metadata using imNFTMeta and save it as .json file,
+   Note: Check out imNFTMeta! You can upload your image to IPFS (e.g. through Pinata), copy the link to it,
+           then create NFT metadata using imNFTMeta,
            and after that upload this file to IPFS again and click 'Set NFT URL' in imNFTControl.
-         After all has been done, paste into the prompt:
-           https://ipfs.io/ipfs/<Your .json file IPFS identifier>
-         Done! Now you can see your token on Rarible/OpenSea etc.
+         After all has been done, paste into the prompt the link to the .json metadata file.
+         Now you can refresh metadata on your desired marketplace (Rarible, OpenSea)
+           and see your token there.
 
 4. You can buy other people's NFTs and participate in auctions using ImageMaker Client (imNFTClient).
 
@@ -62,7 +62,7 @@ ImageMaker NFT Platform
 
    Note: ElProfesor NFT belongs to ImageMaker Foundation.
          You can still mine .imnft file from the image,
-           but you cannot change NFT properties in IMManager.
+           but you cannot change NFT properties in imNFTControl.
 
 6. In order to give away or sell your NFT directly use your crypto wallet.
 
