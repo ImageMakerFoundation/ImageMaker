@@ -2,9 +2,8 @@ ImageMaker NFT Platform
 
 !!! BEFORE READING THIS DOCUMENT MAKE SURE YOU READ 'NFT_NAMING_CONVENTIONS.txt' !!!
 
-0. Set up your Arbitrum One node provider (if having connection issues) and wallet info in the configuration file 'config.ini'.
-
-   Note: You can use the seed phrase instead of directly passing the private key.
+0. Set up your Arbitrum One node provider (if having connection issues) and wallet address in the configuration file 'config.ini'.
+   Make sure you have MetaMask installed in your default browser.
 
 1. Use ImageMaker Paint (imNFTPaint) to draw an image or skip this step if you have got one.
    To clear pixel, right click on it.
